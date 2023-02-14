@@ -1,0 +1,10 @@
+*.DS_Store
+*.xlsx
+*.ipynb
+**/drug_names.csv
+**/cell_names.csv
+**.tsv
+.vscode/**
+**/__pycache__/**
+saved/
+*.pickle
