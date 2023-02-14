@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 from sklearn import metrics
 
 def accuracy(y_pred, y_true):
@@ -49,3 +50,16 @@ def pr_auc(y_pred, y_true):
 def f1_score(y_pred, y_true):
     return metrics.f1_score(y_pred=y_pred.round(), y_true=y_true)
 
+def mse(y_pred, y_true):
+    return metrics.mean_squared_error(y_true=y_true, y_pred=y_pred)
+
+def rmse(y_pred, y_true):
+    return mse(y_pred, y_true) ** 0.5
+
+def pcc(y_pred, y_true):
+    return np.corrcoef(y_pred, y_true)[0, 1]
+
+def calc_stat(numbers):
+    mu = sum(numbers) / len(numbers)
+    sigma = (sum([(x - mu) ** 2 for x in numbers]) / len(numbers)) ** 0.5
+    return mu, sigma

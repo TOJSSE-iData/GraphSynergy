@@ -28,7 +28,7 @@ class GraphSynergy(BaseModel):
         self.aggregation_function = nn.Linear(self.emb_dim*self.n_hop, self.emb_dim)
 
         if self.therapy_method == 'transformation_matrix':
-            self.combine_function = nn.Linear(self.emb_dim*2, self.emb_dim, bias=False)
+            self.combine_function = nn.Linear(self.emb_dim*2, self.emb_dim, bias=True)
         elif self.therapy_method == 'weighted_inner_product':
             self.combine_function = nn.Linear(in_features=2, out_features=1, bias=False)
 

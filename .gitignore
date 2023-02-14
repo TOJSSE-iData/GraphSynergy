@@ -8,3 +8,4 @@
 **/__pycache__/**
 saved/
 *.pickle
+*.out
